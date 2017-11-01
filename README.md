@@ -43,3 +43,4 @@ The output looks like this:
 The first line is always the filename and the rest is the found entry.
 
 01.11.2017 by [MilMike](https://www.milmike.com).
+Still work in progress. Feel free to request features or just fork it and make your own "terminal search engine"

@@ -5,10 +5,13 @@
 
 #Installation:  add . /path/to/this/script/notes.sh  in .zshrc or .bashrc
 
-NOTES_DIR="~/Dropbox"
+NOTES_DIR="/home/michael/Dropbox/planetit/notes"
+FILES_EXTENSION="*.txt"
+ENTRY_SEPARATOR="---"
+
 
 notes() {
 	ASK="$@"
-	find . -iname "*.txt" -print0 | xargs -0 awk -v RS='---' -v ASK=$ASK 'tolower($0) ~ ASK {print "\n########### " FILENAME "\n" $0}'
+	find $NOTES_DIR -type f -iname $FILES_EXTENSION -print0 | xargs -0 awk -v RS=$ENTRY_SEPARATOR -v ASK=$ASK 'tolower($0) ~ ASK {print "\n########### " FILENAME "\n" $0}'
 }
 
